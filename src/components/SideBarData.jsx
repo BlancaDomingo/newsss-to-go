@@ -8,6 +8,12 @@ import * as RiIcons from "react-icons/ri";
 
 export const SideBarData = [
     {
+        title: 'Folge ich',
+        path: '/folgeich',
+        icon: <FaIcons.FaRegStar/>,
+        cName: 'nav-text'
+    },
+    {
         title: 'Deutschland',
         path: '/deutschland',
         icon: <FaIcons.FaFlag />,

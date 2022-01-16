@@ -13,9 +13,9 @@ export default function NavBar({ getSearchText }) {
   const showSidebar = () => setSidebar(!sidebar);
 
   const onClickButton = () => {
-    getSearchText(searchInput)
-   
-    setSearchInput(''); 
+    getSearchText(searchInput);
+
+    setSearchInput("");
   };
 
   return (
@@ -23,10 +23,14 @@ export default function NavBar({ getSearchText }) {
       <div className="navbar">
         <div className="navbar-left">
           <Link to="#" className="menu-bars">
-            <FaIcons.FaBars onClick={showSidebar} />
+            <FaIcons.FaBars onClick={showSidebar} title="Hauptmenü" />
           </Link>
           <img src={logo} alt="logo megafon" className="logo" />
-          <p className="app-name">Newsss toGo</p>
+          <Link to="/" className="app-name-link">
+            <h1 className="app-name" title="News">
+              Newsss toGo
+            </h1>
+          </Link>
         </div>
         <div className="navbar-right">
           <input
@@ -36,7 +40,7 @@ export default function NavBar({ getSearchText }) {
             className="search-input"
             placeholder="Themen, Orte und Quellen suchen..."
           />
-          <Link to="/suche" className="search-logo">
+          <Link to="/suche" className="search-logo" title="Suche">
             <AiIcons.AiOutlineSearch onClick={onClickButton} />
           </Link>
         </div>

@@ -45,9 +45,13 @@
     font-weight: bold;
     font-size: 1.4em;
     color: #195e4b;
-    
+    font-style: italic;   
+   
 }
 
+.app-name-link {
+    text-decoration: none; 
+}
 .search-input {
     border: none;
     border-radius: 5px;

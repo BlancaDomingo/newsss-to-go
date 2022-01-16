@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar";
 import { Routes, Route } from "react-router-dom";
 import MainNews from "./components/MainNews";
 import Help from "./components/Help";
+import Following from "./components/Following";
 
 
 // npm install react-icons
@@ -22,6 +23,7 @@ function App() {
         <NavBar getSearchText={getSearchText}/>
         <Routes>
           <Route path="/" element={<MainNews apiParam='de'/>} />
+          <Route path="folgeich" element={<Following />} />
           <Route path="deutschland" element={<MainNews apiParam='de'/>} />
           <Route path="welt" element={<MainNews apiParam='general' />} />
          {/*  <Route path="localnachrichten" element={<MainNews apiParam={param}/>} /> */}
