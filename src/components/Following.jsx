@@ -21,6 +21,7 @@ function Following() {
             </div>
           );
         })}
+        {!news && <p>Sie haben zur Zeit nichts für später gespeichert</p> }
       
     </div>
   );

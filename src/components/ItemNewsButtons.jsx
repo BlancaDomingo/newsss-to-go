@@ -4,17 +4,12 @@ import * as BiIcons from "react-icons/bi";
 import * as MdIcons from "react-icons/md";
 import * as RiIcons from "react-icons/ri";
 
-function ItemNewsButtons({newsItem, showFollowing}) {
+function ItemNewsButtons({ newsItem, showFollowing }) {
   const [following, setFollowing] = useState(false);
 
   const followingSave = () => {
     setFollowing(!following);
   };
-
-  useEffect(() => {
-       if (showFollowing) {
-           setFollowing(true) }
-  }, [])
 
   useEffect(() => {
     if (following) {
@@ -27,16 +22,16 @@ function ItemNewsButtons({newsItem, showFollowing}) {
       followingArr.push(newsItem);
       const followingString = JSON.stringify(followingArr);
       localStorage.setItem("followingArr", followingString);
-    } 
+    }
   }, [following]);
 
   return (
     <div className="buttons-more">
       <div className="buttons-more-item" onClick={followingSave}>
-        {!following ? (
-          <RiIcons.RiBookmarkLine title="Für später speichern" />
-        ) : (
+        {following || showFollowing ? (
           <RiIcons.RiBookmarkFill title="Aus gespeicherten Meldungen entfernen" />
+        ) : (
+          <RiIcons.RiBookmarkLine title="Für später speichern" />
         )}
       </div>
       &nbsp;&middot;&nbsp;
