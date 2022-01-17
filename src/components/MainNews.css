@@ -20,8 +20,11 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-top: 0.5em;
 }
-
+/* 
 .weather {
     border-radius: 5px;
     max-width: 300px;
@@ -31,7 +34,7 @@ h2 {
     margin-right: 0.5em;
 
 }
-
+ */
 .empty-following {
     margin: 2em;
     width: 90%;
@@ -45,7 +48,7 @@ h2 {
     background-color: transparent;
     border: none;
    
-    margin-top: 2.25em;
+    margin-top: 3.25em;
 } 
 
 .in-den-nachrichten {
