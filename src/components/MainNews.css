@@ -1,9 +1,14 @@
 .main-news {
     margin: 0 auto;
     margin-top: 5.5em;
-    max-width: 50em;
+    max-width: 60em;
     color: #195e4b;
     background-color: white;
+    display: flex;
+}
+
+.main-news-right {
+
 }
 
 h2 {
@@ -31,4 +36,21 @@ h2 {
     margin: 2em;
     width: 90%;
    
+}
+
+.weather-big{
+    border-radius: 5px;
+    max-width: 265px;
+    height: 228px;
+    background-color: transparent;
+    border: none;
+   
+    margin-top: 2.25em;
+} 
+
+.in-den-nachrichten {
+    border-radius: 5px;
+    max-width: 262px;
+    border: 1px solid #caebe2;
+    padding: .5em;
 }

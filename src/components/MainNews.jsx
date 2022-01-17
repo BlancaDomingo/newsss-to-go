@@ -81,26 +81,42 @@ function MainNews({ apiParam, searchText }) {
 
   return (
     <div className="main-news">
-      <div className="title">
+      <div>
+        <div className="title">
         <h2>{news && title}</h2>
 
-        <iframe
-          className="weather"
-          src="https://www.wetter.de/widget/mini/u1hcy/L2RldXRzY2hsYW5kL3dldHRlci1rb2Vsbi0xODIyMDY3OS5odG1s/"
-          title="Wetter"
-        >
-          {" "}
-        </iframe>
+         {/*  <iframe
+            className="weather"
+            src="https://www.wetter.de/widget/mini/u1hcy/L2RldXRzY2hsYW5kL3dldHRlci1rb2Vsbi0xODIyMDY3OS5odG1s/"
+            title="Wetter"
+          >
+           
+          </iframe> */}
+        </div>
+
+        {news &&
+          news.map((newsItem, index) => {
+            return (
+              <div key={index}>
+                <ItemNews newsItem={newsItem} />
+              </div>
+            );
+          })}
+      </div>
+      <div className="main-news-right">
+      
+      <iframe  className="weather-big" src="https://www.wetter.de/widget/heute/u1hugc/false/" title="Wetter"></iframe>
+
+      <div className="in-den-nachrichten">
+        <h3>In den Nachrichten</h3>
+        <hr />
+        <button>Corona</button>
+        <button>Handball</button>
+        <button>Boris Johnson</button>
+
       </div>
 
-      {news &&
-        news.map((newsItem, index) => {
-          return (
-            <div key={index}>
-              <ItemNews newsItem={newsItem} />
-            </div>
-          );
-        })}
+      </div>
     </div>
   );
 }
