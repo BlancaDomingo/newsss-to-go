@@ -51,7 +51,13 @@ function MainNews({ apiParam, searchText }) {
 
   return (
     <div className="main-news">
-      <h2>{news && title}</h2>
+      <div className="title">
+        <h2>{news && title}</h2>
+        
+        <iframe className="weather" src="https://www.wetter.de/widget/mini/u1hcy/L2RldXRzY2hsYW5kL3dldHRlci1rb2Vsbi0xODIyMDY3OS5odG1s/" title="Wetter"> </iframe>
+        
+      </div>
+      
       {news &&
         news.map((newsItem, index) => {
           return (

@@ -6,6 +6,7 @@
     border: 1px solid #caebe2;
     color: #195e4b;
     display: flex;
+    justify-content: space-between;
     border-radius: 5px;
 }
 

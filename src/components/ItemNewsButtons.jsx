@@ -5,25 +5,47 @@ import * as MdIcons from "react-icons/md";
 import * as RiIcons from "react-icons/ri";
 
 function ItemNewsButtons({ newsItem, showFollowing }) {
-  const [following, setFollowing] = useState(false);
+  
+  const [following, setFollowing] = useState(false); 
 
   const followingSave = () => {
-    setFollowing(!following);
+    setFollowing(!following); 
+   
   };
 
+
   useEffect(() => {
+    let followingArr;
+    let followingStr;
     if (following) {
-      let followingArr;
+      console.log('following');
       if (!localStorage.followingArr) {
         followingArr = [];
       } else {
         followingArr = JSON.parse(localStorage.getItem("followingArr"));
       }
       followingArr.push(newsItem);
-      const followingString = JSON.stringify(followingArr);
-      localStorage.setItem("followingArr", followingString);
-    }
-  }, [following]);
+      followingStr = JSON.stringify(followingArr);
+      localStorage.setItem("followingArr", followingStr);
+      
+      } else {
+        console.log('!following');
+        console.log(newsItem.title);
+    } 
+    
+    /*  else {
+      if (!localStorage.followingArr) {
+        followingArr = [];
+      } else {
+        followingArr = JSON.parse(localStorage.getItem("followingArr"));
+        const newFollowingArr = followingArr.filter((item) => {
+          return item !== newsItem;
+        });
+        followingStr = JSON.stringify(newFollowingArr);
+        localStorage.setItem("followingArr", followingStr);
+      }
+    } */
+   }, [following]);
 
   return (
     <div className="buttons-more">
