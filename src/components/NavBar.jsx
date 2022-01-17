@@ -58,8 +58,8 @@ export default function NavBar({ getSearchText }) {
             return (
               <li key={index} className={item.cName}>
                 <Link to={item.path}>
-                  {item.icon}
-                  <span>{item.title}</span>
+                <span className="nav-icon">{item.icon}</span>
+                  <span className="nav-title">{item.title}</span>
                 </Link>
               </li>
             );

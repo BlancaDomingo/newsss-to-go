@@ -51,6 +51,30 @@ h2 {
 .in-den-nachrichten {
     border-radius: 5px;
     max-width: 262px;
-    border: 1px solid #caebe2;
-    padding: .5em;
+   
+    padding: 1em;
+    background-color: #f8f9fa;
+}
+
+.in-den-nachrichten hr {
+
+    color: rgba(207, 206, 206, 0.5);
+    margin: 1em 0;
+}
+
+.in-den-nachrichten button {
+    color: #195e4b;
+    margin: .5em .5em .5em 0;
+    padding: .3em;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.in-den-nachrichten button:hover {
+
+    margin: .5em .5em .5em 0;
+    padding: .3em;
+    background-color: mintcream;
+    border-radius: 5px;
+    font-weight: 600;
 }

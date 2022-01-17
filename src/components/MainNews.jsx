@@ -113,6 +113,9 @@ function MainNews({ apiParam, searchText }) {
         <button>Corona</button>
         <button>Handball</button>
         <button>Boris Johnson</button>
+        <button>Gottschalk</button>
+        <button>Netflix</button>
+        <button>DAX</button>
 
       </div>
 

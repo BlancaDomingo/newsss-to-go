@@ -41,11 +41,15 @@
     background-color: white;
 }
 
-.modal-title {
-    display: inline-block;
-    text-align: center;
-    margin: 0.5em 0 1em;
+.modal-title {   
+    margin: 0.5em 1em 1em;
     font-weight: 600;
+}
+
+.modal-author {     
+    margin: 0.5em .5em 1em;
+    font-weight: 600;
+    color: rgb(114, 113, 113);
 }
 
 .modal-body {
@@ -84,6 +88,16 @@
 }
 
 .link {
+    margin-left: .5em;
+    color: darkgrey;
+}
+
+.facebook {
+    color: #3b5998;
+}
+
+.twitter {
+    color: #1da1f2;
     margin-left: 0.5em;
 }
 

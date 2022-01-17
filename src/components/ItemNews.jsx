@@ -4,6 +4,13 @@ import ItemNewsButtons from "./ItemNewsButtons";
 
 function ItemNews({ newsItem, showFollowing }) {
 
+  const getTime = () => {
+   
+    const date = newsItem.publishedAt.substring(8, 10)  + '-' + newsItem.publishedAt.substring(5, 7) + '-' + newsItem.publishedAt.substring(0, 4) + ' ' + newsItem.publishedAt.substring(11, 16);
+   
+    return date
+  }
+
 
   return (
     <div className="news-item">
@@ -17,7 +24,7 @@ function ItemNews({ newsItem, showFollowing }) {
           <h3>{newsItem.title}</h3>
         </a>
         <p className="news-item-p">
-          {newsItem.publishedAt}&nbsp;&middot;&nbsp;{newsItem.author}
+          {getTime()}&nbsp;&nbsp;&middot;&nbsp;&nbsp;{newsItem.author}
         </p>
         <h4>{newsItem.description}</h4>
       </div>

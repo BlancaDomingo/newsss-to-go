@@ -22,21 +22,22 @@ function Modal({ newsItem, setOpenModal }) {
         <div className="modal-close-button">
           <AiIcons.AiOutlineClose onClick={() => setOpenModal(false)} />
         </div>
-        <div className="modal-title">
-          <h2>{newsItem.title}</h2>
+        <div >
+            <h3 className="modal-author">{newsItem.author}</h3>
+          <h2 className="modal-title">{newsItem.title}</h2>
         </div>
         <div className="modal-body">
           <hr />
           <p>Teilen über</p>
           <div className="modal-body-buttons">
-            <BsIcons.BsFacebook title="Facebook" className="modal-button" />
+            <BsIcons.BsFacebook title="Facebook" className="modal-button facebook" />
             <BsIcons.BsLink45Deg
               title="Link kopieren"
-              className="modal-button link"
+              className="modal-button link "
               onClick={copyLink}
             />
 
-            <BsIcons.BsTwitter title="Twitter" className="modal-button link" />
+            <BsIcons.BsTwitter title="Twitter" className="modal-button twitter" />
           </div>
           <div className="modal-buttons-titles">
             <p className="modal-button-title">Facebook</p>
