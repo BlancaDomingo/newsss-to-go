@@ -33,6 +33,36 @@ function MainNews({ apiParam, searchText }) {
       title = "Wirtschaft";
       break;
 
+    case "science":
+      newsApi =
+        "https://newsapi.org/v2/top-headlines?country=de&category=science&apiKey=1ac2aebda1c64e04a5bd4828db18f788";
+      title = "Wissenschaft";
+      break;
+
+    case "technology":
+      newsApi =
+        "https://newsapi.org/v2/top-headlines?country=de&category=technology&apiKey=1ac2aebda1c64e04a5bd4828db18f788";
+      title = "Technik";
+      break;
+
+    case "entertainment":
+      newsApi =
+        "https://newsapi.org/v2/top-headlines?country=de&category=entertainment&apiKey=1ac2aebda1c64e04a5bd4828db18f788";
+      title = "Unterhaltung";
+      break;
+
+    case "sports":
+      newsApi =
+        "https://newsapi.org/v2/top-headlines?country=de&category=sports&apiKey=1ac2aebda1c64e04a5bd4828db18f788";
+      title = "Sport";
+      break;
+
+    case "health":
+      newsApi =
+        "https://newsapi.org/v2/top-headlines?country=de&category=health&apiKey=1ac2aebda1c64e04a5bd4828db18f788";
+      title = "Gesundheit";
+      break;
+
     default:
       break;
   }
@@ -53,11 +83,16 @@ function MainNews({ apiParam, searchText }) {
     <div className="main-news">
       <div className="title">
         <h2>{news && title}</h2>
-        
-        <iframe className="weather" src="https://www.wetter.de/widget/mini/u1hcy/L2RldXRzY2hsYW5kL3dldHRlci1rb2Vsbi0xODIyMDY3OS5odG1s/" title="Wetter"> </iframe>
-        
+
+        <iframe
+          className="weather"
+          src="https://www.wetter.de/widget/mini/u1hcy/L2RldXRzY2hsYW5kL3dldHRlci1rb2Vsbi0xODIyMDY3OS5odG1s/"
+          title="Wetter"
+        >
+          {" "}
+        </iframe>
       </div>
-      
+
       {news &&
         news.map((newsItem, index) => {
           return (
@@ -66,7 +101,6 @@ function MainNews({ apiParam, searchText }) {
             </div>
           );
         })}
-      
     </div>
   );
 }

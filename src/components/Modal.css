@@ -1,0 +1,89 @@
+.modal-background {
+   /*  width: 100vw;
+    height: 100vh; */
+    background-color: rgba(0,0,0, 0.5); 
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+ 
+    position: fixed;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.modal-container {
+    max-width: 30em;
+    max-height: 30em;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: rgba(0,0,0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.modal-close-button {
+    align-self: flex-end;
+    /* display: flex;
+    justify-content: flex-end; */
+    padding:0.5em;
+    background-color: #caebe2;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 2em;
+    height: 2em;
+}
+
+.modal-close-button:hover {
+    background-color: white;
+}
+
+.modal-title {
+    display: inline-block;
+    text-align: center;
+    margin: 0.5em 0 1em;
+    font-weight: 600;
+}
+
+.modal-body {
+
+}
+
+.modal-body hr {
+    color: rgba(248, 247, 247, 0.5);
+}
+
+.modal-body p {
+    text-align: center;
+    margin: 1em 0;
+    font-weight: 500;
+}
+
+.modal-body-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 3em;
+    margin: .5em 0 .3em;
+
+}
+
+.modal-button:hover {
+    color: #caebe2;
+}
+
+.modal-buttons-titles {
+    display: flex;
+    justify-content: space-evenly;
+}
+.modal-button-title {
+    font-size: 0.8em;
+    align-self: start;
+}
+
+.link {
+    margin-left: 0.5em;
+}
+
