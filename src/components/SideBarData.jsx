@@ -27,7 +27,7 @@ export const SideBarData = [
     },
     {
         title: 'Meine Lokalnachrichten',
-        path: '/localnachrichten',
+        path: '/lokalnachrichten',
         icon: <MdIcons.MdLocationPin />,
         cName: 'nav-text'
     },

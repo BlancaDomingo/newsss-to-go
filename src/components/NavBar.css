@@ -30,10 +30,7 @@
 }
 
 .menu-bars:hover {
-    border-radius: 50%;
-    /* background-color: mintcream ; */
-    background: none;
-    padding: 0.3em 0.4em 0.1em 0.4em;
+    transform: scale(1.2);
 }
 
 .logo {
@@ -89,7 +86,8 @@
 }
 
 .search-logo:hover {
-    color: mintcream ;
+    transform: scale(1.2);
+    cursor: pointer;
     
 }
 
@@ -141,6 +139,8 @@
 
 .nav-text a:hover {
     background-color:mintcream;
+    
+    cursor: pointer;
 }
 
 .nav-menu-items {

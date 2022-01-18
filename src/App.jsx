@@ -6,10 +6,13 @@ import { Routes, Route } from "react-router-dom";
 import MainNews from "./components/MainNews";
 import Help from "./components/Help";
 import Following from "./components/Following";
+import LocalNews from "./components/LocalNews";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 
 // npm install react-icons
 // npm install react-router-dom
+// npm i react-loader-spinner
 
 function App() {
   const [searchText, setSearchText] = useState();
@@ -26,7 +29,7 @@ function App() {
           <Route path="folgeich" element={<Following getSearchText={getSearchText}/>} />
           <Route path="deutschland" element={<MainNews apiParam='de'getSearchText={getSearchText}/>} />
           <Route path="welt" element={<MainNews apiParam='general' getSearchText={getSearchText}/>} />
-         {/*  <Route path="localnachrichten" element={<MainNews apiParam={param}/>} /> */}
+          <Route path="lokalnachrichten" element={<LocalNews getSearchText={getSearchText}/>} /> 
           <Route path="wirtschaft" element={<MainNews apiParam='business' getSearchText={getSearchText}/>} />
           <Route path="wissenschaft" element={<MainNews apiParam='science' getSearchText={getSearchText}/>} />
           <Route path="technik" element={<MainNews apiParam='technology' getSearchText={getSearchText}/>} />

@@ -7,13 +7,8 @@
     display: flex;
 }
 
-/* .main-news-left {
-    width: 30em;
-}
- */
-/* .main-news-right {
 
-} */
+
 
 h2 {
     margin-left: 0.3em;
@@ -50,7 +45,7 @@ h2 {
     max-width: 262px;
    
     padding: 1em;
-    background-color: #f8f9fa;
+    background-color: rgba(236, 235, 235, 0.5);
 }
 
 .in-den-nachrichten hr {
@@ -65,15 +60,16 @@ h2 {
     padding: .3em;
     background-color: white;
     border-radius: 5px;
+    border: none;
+    transition:all 0.3s ease;
 }
 
 .in-den-nachrichten button:hover {
-
-    margin: .5em .5em .5em 0;
-    padding: .3em;
-    background-color: mintcream;
-    border-radius: 5px;
-    font-weight: 600;
+    transform: scale(1.2);
+    cursor: pointer;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+   
+    
 }
 
 @media screen and (max-width: 769px) {
@@ -81,5 +77,7 @@ h2 {
         display: none;
     }
 }
+
+
 
 

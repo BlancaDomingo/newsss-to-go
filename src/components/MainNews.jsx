@@ -2,30 +2,17 @@ import React from "react";
 import "./MainNews.css";
 import ItemNews from "./ItemNews";
 import { useEffect, useState } from "react";
-import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { SearchData } from "./SearchData";
+import { Circles } from "react-loader-spinner";
 
 function MainNews({ apiParam, searchText, getSearchText }) {
   const [news, setNews] = useState("");
-
-  const search = [
-    "Corona",
-    "Handball",
-    "Boris Johnson",
-    "DAX",
-    "Bayern",
-    "Ukraine",
-    "Djokovic",
-    "Omikron",
-    "Horoskop",
-  ];
-
-  
+  const [done, setDone] = useState(false);
 
   let newsApi =
     "https://newsapi.org/v2/top-headlines?country=de&apiKey=9d557de654564232a8830ba0338536e2";
   let title = "Deutschland";
-  
 
   switch (apiParam) {
     case "de":
@@ -42,9 +29,9 @@ function MainNews({ apiParam, searchText, getSearchText }) {
 
     case "p":
       let searchTextNotEmpty = `''`;
-      if (searchText !== '') {
+      if (searchText !== "") {
         searchTextNotEmpty = searchText;
-      } 
+      }
       newsApi = `https://newsapi.org/v2/everything?q=${searchTextNotEmpty}&language=de&apiKey=9d557de654564232a8830ba0338536e2`;
       title = searchText;
       break;
@@ -94,56 +81,68 @@ function MainNews({ apiParam, searchText, getSearchText }) {
       .then((res) => res.json())
       .then((res) => {
         setNews(res.articles);
+        setDone(true);
       })
       .catch(() => {
         alert("Error!!!");
       });
   }, [newsApi]);
 
-  return (
-    <div className="main-news">
-      <div className="main-news-left">
-        <div className="title">
-          <h2>{news && title}</h2> {/* <h3>{news && icon}</h3> */}
-        </div>
+  if (!done) {
+    return (
+      <div className="loader">
+        <Circles
+          height="150"
+          width="150"
+          color="#00da9d"
+          arialLabel="loading..."
+        />
+      </div>
+    );
+  } else {
+    return (
+      <div className="main-news">
+        <div className="main-news-left">
+          <div className="title">
+            <h2>{news && title}</h2> 
+          </div>
 
-        {news &&
-          news.map((newsItem, index) => {
-            return (
-              <div key={index}>
-                <ItemNews newsItem={newsItem} />
-              </div>
-            );
-          })}
+          {news &&
+            news.map((newsItem, index) => {
+              return (
+                <div key={index}>
+                  <ItemNews newsItem={newsItem} />
+                </div>
+              );
+            })}
           {news.length === 0 && (
-          <p className="empty-following">&nbsp;&nbsp;&nbsp;
-            Keine Ergebnisse gefunden&nbsp;&nbsp;&nbsp;
-          </p>
-        )}
-      </div>
-      <div className="main-news-right">
-        <iframe
-          className="weather-big"
-          src="https://www.wetter.de/widget/heute/u1hugc/false/"
-          title="Wetter"
-        ></iframe>
+            <p className="empty-following">
+              &nbsp;&nbsp;&nbsp; Keine Ergebnisse gefunden&nbsp;&nbsp;&nbsp;
+            </p>
+          )}
+        </div>
+        <div className="main-news-right">
+          <iframe
+            className="weather-big"
+            src="https://www.wetter.de/widget/heute/u1hugc/false/"
+            title="Wetter"
+          ></iframe>
 
-        <div className="in-den-nachrichten">
-          <h3>In den Nachrichten</h3>
-          <hr />
-          {search.map((item, index) => {
-            return (
-              <Link key={index} to="/suche" title="Suche">
-                <button onClick={() => getSearchText(item)}>
-                  {item}
-                </button>
-              </Link>
-            );
-          })}
+          <div className="in-den-nachrichten">
+            <h3>In den Nachrichten</h3>
+            <hr />
+            {SearchData.map((item, index) => {
+              return (
+                <Link key={index} to="/suche" title="Suche">
+                  <button onClick={() => getSearchText(item)}>{item}</button>
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default MainNews;
