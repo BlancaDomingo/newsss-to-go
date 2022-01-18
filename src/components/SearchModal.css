@@ -1,0 +1,55 @@
+.search-modal-background {
+   
+     background-color: rgba(0,0,0, 0.2); 
+     left: 0;
+     top: 0;
+     right: 0;
+     bottom: 0;
+  
+     position: fixed;  
+     display: flex;
+     justify-content: center;
+     align-items: flex-start;
+  
+   
+ }
+ 
+ .search-modal-container {
+     max-width: 22em;
+     max-height: 5em;
+     border-radius: 10px;
+     background-color: white;
+     box-shadow: rgba(0,0,0, 0.35) 0px 5px 15px;
+     display: flex;
+     align-items: center;
+     margin-top: 0.5em;   
+     
+     padding: 0.3em;
+ }
+ 
+ .search-modal-close-button {
+   
+     padding:0.5em;
+     background-color: #caebe2;
+     border-radius: 50%;
+     cursor: pointer;
+     width: 2em;
+     height: 2em;
+ }
+ 
+ .search-modal-close-button:hover {
+     background-color: white;
+ }
+
+ .search-modal-logo {
+    color: #195e4b;
+    font-size: 1.5em;
+    margin: .4em .5em 0;
+    transition:all 0.3s ease;
+  
+}
+
+.search-modal-logo:hover {
+    color: #caebe2
+}
+ 

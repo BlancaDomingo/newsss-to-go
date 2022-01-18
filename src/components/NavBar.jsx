@@ -5,10 +5,12 @@ import { Link } from "react-router-dom";
 import { SideBarData } from "./SideBarData";
 import "./NavBar.css";
 import logo from "../megafon.png";
+import SearchModal from "./SearchModal";
 
 export default function NavBar({ getSearchText }) {
   const [sidebar, setSidebar] = useState(false);
   const [searchInput, setSearchInput] = useState("");
+  const [openModal, setOpenModal] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
 
@@ -17,6 +19,8 @@ export default function NavBar({ getSearchText }) {
 
     setSearchInput("");
   };
+
+  
 
   return (
     <>
@@ -32,6 +36,7 @@ export default function NavBar({ getSearchText }) {
             </h1>
           </Link>
         </div>
+
         <div className="navbar-right">
           <input
             onChange={(e) => setSearchInput(e.target.value)}
@@ -44,6 +49,20 @@ export default function NavBar({ getSearchText }) {
             <AiIcons.AiOutlineSearch onClick={onClickButton} />
           </Link>
         </div>
+
+
+
+        <div className="navbar-right-little">
+          <AiIcons.AiOutlineSearch
+            onClick={() => setOpenModal(true)}
+            className="search-logo"
+            title="Suche"
+          />
+           { openModal && <SearchModal  setOpenModal={setOpenModal} getSearchText={getSearchText}/>}
+        </div>
+
+
+
       </div>
       <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
         <ul className="nav-menu-items" onClick={showSidebar}>
@@ -58,7 +77,7 @@ export default function NavBar({ getSearchText }) {
             return (
               <li key={index} className={item.cName}>
                 <Link to={item.path}>
-                <span className="nav-icon">{item.icon}</span>
+                  <span className="nav-icon">{item.icon}</span>
                   <span className="nav-title">{item.title}</span>
                 </Link>
               </li>

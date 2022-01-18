@@ -93,7 +93,9 @@
     
 }
 
-
+.navbar-right-little {
+    display: none;
+}
 
 .nav-menu {
     background-color: #caebe2;
@@ -173,4 +175,10 @@ span {
    .navbar-right {
        display: none;
    }
+
+   .navbar-right-little{
+        display: initial;
+    }
+
+
 }
