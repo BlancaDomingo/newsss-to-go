@@ -3,18 +3,34 @@ import "./MainNews.css";
 import ItemNews from "./ItemNews";
 import { useEffect, useState } from "react";
 import * as FaIcons from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-function MainNews({ apiParam, searchText }) {
+function MainNews({ apiParam, searchText, getSearchText }) {
   const [news, setNews] = useState("");
+
+  const search = [
+    "Corona",
+    "Handball",
+    "Boris Johnson",
+    "DAX",
+    "Bayern",
+    "Ukraine",
+    "Djokovic",
+    "Omikron",
+    "Horoskop",
+  ];
+
+  
+
   let newsApi =
-    "https://newsapi.org/v2/top-headlines?country=de&apiKey=1ac2aebda1c64e04a5bd4828db18f788";
+    "https://newsapi.org/v2/top-headlines?country=de&apiKey=9d557de654564232a8830ba0338536e2";
   let title = "Deutschland";
-  let icon = <FaIcons.FaFlag />
+  
 
   switch (apiParam) {
     case "de":
       newsApi =
-        "https://newsapi.org/v2/top-headlines?country=de&apiKey=1ac2aebda1c64e04a5bd4828db18f788";
+        "https://newsapi.org/v2/top-headlines?country=de&apiKey=9d557de654564232a8830ba0338536e2";
       title = "Deutschland";
       break;
 
@@ -25,7 +41,11 @@ function MainNews({ apiParam, searchText }) {
       break;
 
     case "p":
-      newsApi = `https://newsapi.org/v2/top-headlines?country=de&q=${searchText}&language=de&apiKey=1ac2aebda1c64e04a5bd4828db18f788`;
+      let searchTextNotEmpty = `''`;
+      if (searchText !== '') {
+        searchTextNotEmpty = searchText;
+      } 
+      newsApi = `https://newsapi.org/v2/everything?q=${searchTextNotEmpty}&language=de&apiKey=9d557de654564232a8830ba0338536e2`;
       title = searchText;
       break;
 
@@ -68,7 +88,6 @@ function MainNews({ apiParam, searchText }) {
     default:
       break;
   }
-  /*   }, []); */
 
   useEffect(() => {
     fetch(newsApi)
@@ -83,17 +102,9 @@ function MainNews({ apiParam, searchText }) {
 
   return (
     <div className="main-news">
-      <div>
+      <div className="main-news-left">
         <div className="title">
-        <h2>{news && title}</h2> {/* <h3>{news && icon}</h3> */}
-
-         {/*  <iframe
-            className="weather"
-            src="https://www.wetter.de/widget/mini/u1hcy/L2RldXRzY2hsYW5kL3dldHRlci1rb2Vsbi0xODIyMDY3OS5odG1s/"
-            title="Wetter"
-          >
-           
-          </iframe> */}
+          <h2>{news && title}</h2> {/* <h3>{news && icon}</h3> */}
         </div>
 
         {news &&
@@ -104,23 +115,32 @@ function MainNews({ apiParam, searchText }) {
               </div>
             );
           })}
+          {news.length === 0 && (
+          <p className="empty-following">&nbsp;&nbsp;&nbsp;
+            Keine Ergebnisse gefunden&nbsp;&nbsp;&nbsp;
+          </p>
+        )}
       </div>
       <div className="main-news-right">
-      
-      <iframe  className="weather-big" src="https://www.wetter.de/widget/heute/u1hugc/false/" title="Wetter"></iframe>
+        <iframe
+          className="weather-big"
+          src="https://www.wetter.de/widget/heute/u1hugc/false/"
+          title="Wetter"
+        ></iframe>
 
-      <div className="in-den-nachrichten">
-        <h3>In den Nachrichten</h3>
-        <hr />
-        <button>Corona</button>
-        <button>Handball</button>
-        <button>Boris Johnson</button>
-        <button>Gottschalk</button>
-        <button>Netflix</button>
-        <button>DAX</button>
-
-      </div>
-
+        <div className="in-den-nachrichten">
+          <h3>In den Nachrichten</h3>
+          <hr />
+          {search.map((item, index) => {
+            return (
+              <Link key={index} to="/suche" title="Suche">
+                <button onClick={() => getSearchText(item)}>
+                  {item}
+                </button>
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

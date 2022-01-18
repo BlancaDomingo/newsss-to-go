@@ -7,9 +7,13 @@
     display: flex;
 }
 
-.main-news-right {
-
+/* .main-news-left {
+    width: 30em;
 }
+ */
+/* .main-news-right {
+
+} */
 
 h2 {
     margin-left: 0.3em;
@@ -24,19 +28,9 @@ h2 {
     font-weight: 600;
     margin-top: 0.5em;
 }
-/* 
-.weather {
-    border-radius: 5px;
-    max-width: 300px;
-    height: 70px;
-    background-color: transparent;
-    border: none;
-    margin-right: 0.5em;
 
-}
- */
 .empty-following {
-    margin: 2em;
+    margin: 5em 2em 2em;
     width: 90%;
    
 }
@@ -81,3 +75,11 @@ h2 {
     border-radius: 5px;
     font-weight: 600;
 }
+
+@media screen and (max-width: 769px) {
+    .main-news-right {
+        display: none;
+    }
+}
+
+

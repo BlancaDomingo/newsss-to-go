@@ -22,19 +22,19 @@ function App() {
     <div>     
         <NavBar getSearchText={getSearchText}/>
         <Routes>
-          <Route path="/" element={<MainNews apiParam='de'/>} />
-          <Route path="folgeich" element={<Following />} />
-          <Route path="deutschland" element={<MainNews apiParam='de'/>} />
-          <Route path="welt" element={<MainNews apiParam='general' />} />
+          <Route path="/" element={<MainNews apiParam='de'getSearchText={getSearchText}/>} />
+          <Route path="folgeich" element={<Following getSearchText={getSearchText}/>} />
+          <Route path="deutschland" element={<MainNews apiParam='de'getSearchText={getSearchText}/>} />
+          <Route path="welt" element={<MainNews apiParam='general' getSearchText={getSearchText}/>} />
          {/*  <Route path="localnachrichten" element={<MainNews apiParam={param}/>} /> */}
-          <Route path="wirtschaft" element={<MainNews apiParam='business' />} />
-          <Route path="wissenschaft" element={<MainNews apiParam='science' />} />
-          <Route path="technik" element={<MainNews apiParam='technology' />} />
-          <Route path="unterhaltung" element={<MainNews apiParam='entertainment' />} />
-          <Route path="sport" element={<MainNews apiParam='sports' />} />
-          <Route path="gesundheit" element={<MainNews apiParam='health' />} />
+          <Route path="wirtschaft" element={<MainNews apiParam='business' getSearchText={getSearchText}/>} />
+          <Route path="wissenschaft" element={<MainNews apiParam='science' getSearchText={getSearchText}/>} />
+          <Route path="technik" element={<MainNews apiParam='technology' getSearchText={getSearchText}/>} />
+          <Route path="unterhaltung" element={<MainNews apiParam='entertainment' getSearchText={getSearchText}/>} />
+          <Route path="sport" element={<MainNews apiParam='sports' />} getSearchText={getSearchText}/>
+          <Route path="gesundheit" element={<MainNews apiParam='health' getSearchText={getSearchText}/>} />
 
-          <Route path="suche" element={<MainNews searchText={searchText} apiParam='p' />} />
+          <Route path="suche" element={<MainNews searchText={searchText} apiParam='p' getSearchText={getSearchText}/>} />
 
           <Route path="hilfe" element={<Help />} />
           <Route path="*" element={<MainNews apiParam='de'/>} />
