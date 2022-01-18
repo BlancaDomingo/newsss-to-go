@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { SideBarData } from "./SideBarData";
@@ -27,7 +26,7 @@ export default function NavBar({ getSearchText }) {
       <div className="navbar">
         <div className="navbar-left">
           <Link to="#" className="menu-bars">
-            <FaIcons.FaBars onClick={showSidebar} title="Hauptmenü" />
+            <AiIcons.AiOutlineMenu onClick={showSidebar} title="Hauptmenü" />
           </Link>
           <img src={logo} alt="logo megafon" className="logo" />
           <Link to="/" className="app-name-link">
@@ -77,7 +76,7 @@ export default function NavBar({ getSearchText }) {
             return (
               <li key={index} className={item.cName}>
                 <Link to={item.path}>
-                  <span className="nav-icon">{item.icon}</span>
+                  <span className="nav-icon">&nbsp;&nbsp;{item.icon}</span>
                   <span className="nav-title">{item.title}</span>
                 </Link>
               </li>

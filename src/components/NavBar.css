@@ -1,6 +1,6 @@
 .navbar {
     background-color: #caebe2 ;
-    height: 70px;
+    height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,7 +20,7 @@
 
 .menu-bars {
     margin-left: 1.5rem;
-    font-size: 1.5rem;
+    font-size: 1.3em;
    /*  background: none;    */  
     background-color: mintcream ;
     color: #195e4b;
@@ -120,7 +120,7 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    padding: 8px 0px 8px 16px;
+    padding: 8px 0px 8px 0px;
     list-style: none;
     height: 60px;
 }
@@ -135,7 +135,7 @@
     display: flex;
     align-items: center;
     padding: 0 16px;
-    border-radius: 4px;
+    border-radius: 0 20px 20px 0;
     transition:all 0.3s ease;
 }
 
@@ -150,7 +150,7 @@
 .navbar-toggle {
     background-color: #caebe2;
     width: 100%;
-    height: 80px;
+    height: 60px;
     display: flex;
     justify-content: start;
     align-items: center;
