@@ -1,7 +1,8 @@
 
 
 export const SearchData = [
-    "Corona",
+
+"Corona",
 "Handball",
 "Boris Johnson",
 "DAX",
@@ -9,5 +10,7 @@ export const SearchData = [
 "Ukraine",
 "Djokovic",
 "Omikron",
-"Horoskop"
+"Horoskop",
+"Vulkan",
+"Vereinte Nationen"
 ]

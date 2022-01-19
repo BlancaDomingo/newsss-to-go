@@ -13,6 +13,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 // npm install react-icons
 // npm install react-router-dom
 // npm i react-loader-spinner
+// npm i styled-components
 
 function App() {
   const [searchText, setSearchText] = useState();
@@ -38,6 +39,7 @@ function App() {
           <Route path="gesundheit" element={<MainNews apiParam='health' getSearchText={getSearchText}/>} />
 
           <Route path="suche" element={<MainNews searchText={searchText} apiParam='p' getSearchText={getSearchText}/>} />
+          <Route path="covid" element={<MainNews searchText="Corona Covid" apiParam='p' getSearchText={getSearchText}/>} />
 
           <Route path="hilfe" element={<Help />} />
           <Route path="*" element={<MainNews apiParam='de'/>} />

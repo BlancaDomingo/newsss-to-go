@@ -4,6 +4,8 @@ import ItemNews from "./ItemNews";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logoOb from "../oberhausen.jpg";
+import logoBe from "../berlin.jpg";
+import logoKo from "../koeln.jpg"
 import { SearchData } from "./SearchData";
 import { Circles } from "react-loader-spinner";
 import * as BiIcons from "react-icons/bi";
@@ -62,16 +64,16 @@ function LocalNews({ getSearchText }) {
           </div>
           <div className="local-city" onClick={() => setCity("köln")}>
             <img
-              src={logoOb}
-              alt="Oberhausen bei Nacht"
+              src={logoKo}
+              alt="Köln Panorama"
               className="city-picture"
             />
             <p>Köln</p>
           </div>
           <div className="local-city" onClick={() => setCity("berlin")}>
             <img
-              src={logoOb}
-              alt="Oberhausen bei Nacht"
+              src={logoBe}
+              alt="Berlin mit Wolken"
               className="city-picture"
             />
             <p>Berlin</p>

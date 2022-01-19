@@ -7,12 +7,12 @@ import * as MdIcons from "react-icons/md";
 import * as RiIcons from "react-icons/ri";
 
 export const SideBarData = [
-    {
+   /*  {
         title: 'Folge ich',
         path: '/folgeich',
         icon: <FaIcons.FaRegStar/>,
         cName: 'nav-text'
-    },
+    }, */
     {
         title: 'Deutschland',
         path: '/deutschland',
@@ -66,12 +66,12 @@ export const SideBarData = [
         path: '/gesundheit',
         icon: <RiIcons.RiMentalHealthLine />,
         cName: 'nav-text'
-    },
+    }/* ,
     {
         title: 'Hilfe',
         path: '/hilfe',
         icon: <IoIcons.IoMdHelpCircle />,
         cName: 'nav-text'
-    }
+    } */
 ]
 

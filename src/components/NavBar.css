@@ -160,6 +160,15 @@ span {
     margin-left: 16px;
 }
 
+.hr-style {
+    color: rgba(255,255, 255,0.3);
+    margin: 0.2em 0;
+}
+
+.margin-style {
+    margin-bottom: .7em;
+}
+
 @media screen and (max-width: 680px) {
    /* .navbar {
        flex-direction: column;       
