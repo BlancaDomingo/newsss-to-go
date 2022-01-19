@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from "react";
 import "./ItemNewsButtons.css";
 
+import * as BsIcons from "react-icons/bs";
 import * as RiIcons from "react-icons/ri";
 
+
 function ButtonFollowing({ newsItem, showFollowing }) {
-  const [following, setFollowing] = useState(false);
+  const [following, setFollowing] = useState(null);
 
   const followingSave = () => {
-    setFollowing(!following);
+    if (following === null) {
+      setFollowing(true);
+    } else if (following === true) {
+      setFollowing(false);
+    } else if (following === false) {
+      setFollowing(true);
+    }
   };
-
- /*  useEffect(() => {
-    leer Storage, para q marque lo q esta verde
-  }, []) */
 
   useEffect(() => {
     let followingArr;
@@ -26,6 +30,13 @@ function ButtonFollowing({ newsItem, showFollowing }) {
       }
       followingArr.push(newsItem);
       followingStr = JSON.stringify(followingArr);
+      localStorage.setItem("followingArr", followingStr);
+    } else if (following === false) {
+      followingArr = JSON.parse(localStorage.getItem("followingArr"));
+      const newFollowingArr = followingArr.filter((item) => {
+        return item.title !== newsItem.title;
+      });
+      followingStr = JSON.stringify(newFollowingArr);
       localStorage.setItem("followingArr", followingStr);
     }
 
@@ -43,13 +54,22 @@ function ButtonFollowing({ newsItem, showFollowing }) {
     } */
   }, [following]);
 
+/*   const setIconFollowing = () => {
+    if (showFollowing) {
+      return <BsIcons.BsTrash title="Aus gespeicherten Meldungen entfernen" />
+    } else if (following) {
+      return <RiIcons.RiBookmarkFill title="Aus gespeicherten Meldungen entfernen" />
+    } else return <RiIcons.RiBookmarkLine title="Für später speichern" />
+  } */
+
   return (
     <div className="buttons-more-item" onClick={followingSave}>
-      {following || showFollowing ? (
+   {/*    {setIconFollowing()} */}
+     {following || showFollowing ? (
         <RiIcons.RiBookmarkFill title="Aus gespeicherten Meldungen entfernen" />
       ) : (
         <RiIcons.RiBookmarkLine title="Für später speichern" />
-      )}
+      )} 
     </div>
   );
 }

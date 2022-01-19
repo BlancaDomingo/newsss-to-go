@@ -2,7 +2,7 @@ import React from "react";
 import "./ItemNews.css";
 import ItemNewsButtons from "./ItemNewsButtons";
 
-function ItemNews({ newsItem, showFollowing }) {
+function ItemNews({ newsItem, showFollowing, ifNewsDeleted }) {
 
   const getTime = () => {
    
@@ -30,7 +30,7 @@ function ItemNews({ newsItem, showFollowing }) {
       </div>
       <div>
         <img src={newsItem.urlToImage} alt="..." className="news-item-photo" />
-        <ItemNewsButtons newsItem={newsItem} showFollowing={showFollowing}/>
+        <ItemNewsButtons newsItem={newsItem} showFollowing={showFollowing} ifNewsDeleted={ifNewsDeleted} />
       </div>
     </div>
   );

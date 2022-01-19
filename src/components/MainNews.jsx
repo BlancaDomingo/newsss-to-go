@@ -11,13 +11,13 @@ function MainNews({ apiParam, searchText, getSearchText }) {
   const [done, setDone] = useState(false);
 
   let newsApi =
-    "https://newsapi.org/v2/top-headlines?country=de&apiKey=9d557de654564232a8830ba0338536e2";
+    "https://newsapi.org/v2/top-headlines?country=de&apiKey=1ac2aebda1c64e04a5bd4828db18f788";
   let title = "Deutschland";
 
   switch (apiParam) {
     case "de":
       newsApi =
-        "https://newsapi.org/v2/top-headlines?country=de&apiKey=9d557de654564232a8830ba0338536e2";
+        "https://newsapi.org/v2/top-headlines?country=de&apiKey=1ac2aebda1c64e04a5bd4828db18f788";
       title = "Deutschland";
       break;
 
@@ -32,7 +32,7 @@ function MainNews({ apiParam, searchText, getSearchText }) {
       if (searchText !== "") {
         searchTextNotEmpty = searchText;
       }
-      newsApi = `https://newsapi.org/v2/everything?q=${searchTextNotEmpty}&language=de&apiKey=9d557de654564232a8830ba0338536e2`;
+      newsApi = `https://newsapi.org/v2/everything?q=${searchTextNotEmpty}&language=de&apiKey=1ac2aebda1c64e04a5bd4828db18f788`;
       title = searchText;
       break;
 
@@ -121,6 +121,7 @@ function MainNews({ apiParam, searchText, getSearchText }) {
             </p>
           )}
         </div>
+        {news && news.length !== 0 &&
         <div className="main-news-right">
           <iframe
             className="weather-big"
@@ -139,7 +140,7 @@ function MainNews({ apiParam, searchText, getSearchText }) {
               );
             })}
           </div>
-        </div>
+        </div>}
       </div>
     );
   }
