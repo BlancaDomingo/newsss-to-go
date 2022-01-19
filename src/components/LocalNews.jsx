@@ -107,7 +107,7 @@ function LocalNews({ getSearchText }) {
           </div>
           <div className="main-news-right">
             <iframe
-              className="weather-big"
+              className="weather-big-local"
               src={getWeatherUrl()}
               title="Wetter"
             ></iframe>

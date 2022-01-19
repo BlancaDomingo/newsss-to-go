@@ -18,27 +18,80 @@ h2 {
 .title {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     font-size: 1.2em;
     font-weight: 600;
     margin-top: 0.5em;
+    margin-bottom: 1em;
+    padding-left: .5em;
 }
 
+.icon-title {
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 50%;
+}
+ .share-main-news {
+    display: flex;
+    align-items: center;
+    margin-right: 0.7em;
+    font-size: 0.8em;
+    font-weight: 600;
+    padding: .3em .5em;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1); 
+    background-color: white;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+    transition:all 0.3s ease;
+} 
+
+.share-main-news:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.title-title {
+    margin-right: 30% ;
+}
+
+.flex-title {
+    display: flex;
+    align-items: center;
+}
+
+.icon-style {
+    color: #00da9d;
+    font-size: 1.5em;
+    margin-right: .5em;
+}
 .empty-following {
     margin: 5em 2em 2em;
     width: 90%;
    
 }
 
-.weather-big{
+.weather-big,
+.weather-big-following,
+.weather-big-local {
     border-radius: 5px;
     max-width: 265px;
     height: 228px;
     background-color: transparent;
     border: none;
    
-    margin-top: 3.25em;
+  
 } 
+
+.weather-big {
+    margin-top: 6em;
+}
+
+.weather-big-following,
+.weather-big-local {
+
+    margin-top: 4em;
+
+}
 
 .in-den-nachrichten {
     border-radius: 5px;

@@ -68,7 +68,7 @@ function Following({ getSearchText }) {
         {news && news.length !== 0 &&
           <div className="main-news-right">
             <iframe
-              className="weather-big"
+              className="weather-big-following"
               src="https://www.wetter.de/widget/heute/u1hugc/false/"
               title="Wetter"
             ></iframe>
