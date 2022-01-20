@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as BsIcons from "react-icons/bs";
 
-
 function ButtonDelete({ newsItem, ifNewsDeleted }) {
   const [deleteNews, setDeleteNews] = useState(false);
 
@@ -19,12 +18,10 @@ function ButtonDelete({ newsItem, ifNewsDeleted }) {
 
   return (
     <div className="buttons-more-item">
-   
-        <BsIcons.BsTrash
-          title="Aus gespeicherten Meldungen entfernen"
-          onClick={() => setDeleteNews(true)}
-        />
-     
+      <BsIcons.BsTrash
+        title="Aus gespeicherten Meldungen entfernen"
+        onClick={() => setDeleteNews(true)}
+      />
     </div>
   );
 }

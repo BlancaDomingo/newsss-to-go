@@ -25,21 +25,24 @@ function MainNews({ apiParam, searchText, getSearchText }) {
   
 
   let newsApi =
-    "https://newsapi.org/v2/top-headlines?country=de&apiKey=1ac2aebda1c64e04a5bd4828db18f788";
+    /* "https://newsapi.org/v2/top-headlines?country=de&apiKey=1ac2aebda1c64e04a5bd4828db18f788"; */
+    `https://newsserver123.herokuapp.com/news/de`
   let title = "Deutschland";
   let icon = logoGerman;
 
   switch (apiParam) {
     case "de":
       newsApi =
-        "https://newsapi.org/v2/top-headlines?country=de&apiKey=1ac2aebda1c64e04a5bd4828db18f788";
+       /*  "https://newsapi.org/v2/top-headlines?country=de&apiKey=1ac2aebda1c64e04a5bd4828db18f788"; */
+       `https://newsserver123.herokuapp.com/news/de`
       title = "Deutschland";
       icon = logoGerman;
       break;
 
     case "general":
       newsApi =
-        "https://newsapi.org/v2/top-headlines?category=general&apiKey=1ac2aebda1c64e04a5bd4828db18f788";
+        /* "https://newsapi.org/v2/top-headlines?category=general&apiKey=1ac2aebda1c64e04a5bd4828db18f788"; */
+        `https://newsserver123.herokuapp.com/news/general`
       title = "Welt";
       icon = logoWorld;
       break;
@@ -49,49 +52,56 @@ function MainNews({ apiParam, searchText, getSearchText }) {
       if (searchText !== "") {
         searchTextNotEmpty = searchText;
       }
-      newsApi = `https://newsapi.org/v2/everything?q=${searchTextNotEmpty}&language=de&apiKey=1ac2aebda1c64e04a5bd4828db18f788`;
+      newsApi = /* `https://newsapi.org/v2/everything?q=${searchTextNotEmpty}&language=de&apiKey=1ac2aebda1c64e04a5bd4828db18f788`; */
+      `https://newsserver123.herokuapp.com/news/search/${searchTextNotEmpty}`
       title = searchText;
       icon = logoSearch;
       break;
 
     case "business":
       newsApi =
-        "https://newsapi.org/v2/top-headlines?country=de&category=business&apiKey=1ac2aebda1c64e04a5bd4828db18f788";
+       /*  "https://newsapi.org/v2/top-headlines?country=de&category=business&apiKey=1ac2aebda1c64e04a5bd4828db18f788"; */
+       `https://newsserver123.herokuapp.com/news/business`
       title = "Wirtschaft";
       icon = logoBusiness;
       break;
 
     case "science":
       newsApi =
-        "https://newsapi.org/v2/top-headlines?country=de&category=science&apiKey=1ac2aebda1c64e04a5bd4828db18f788";
+       /*  "https://newsapi.org/v2/top-headlines?country=de&category=science&apiKey=1ac2aebda1c64e04a5bd4828db18f788"; */
+       `https://newsserver123.herokuapp.com/news/science`
       title = "Wissenschaft";
       icon = logoScience;
       break;
 
     case "technology":
       newsApi =
-        "https://newsapi.org/v2/top-headlines?country=de&category=technology&apiKey=1ac2aebda1c64e04a5bd4828db18f788";
+       /*  "https://newsapi.org/v2/top-headlines?country=de&category=technology&apiKey=1ac2aebda1c64e04a5bd4828db18f788"; */
+       `https://newsserver123.herokuapp.com/news/technology`
       title = "Technik";
       icon = logoTech;
       break;
 
     case "entertainment":
       newsApi =
-        "https://newsapi.org/v2/top-headlines?country=de&category=entertainment&apiKey=1ac2aebda1c64e04a5bd4828db18f788";
+        /* "https://newsapi.org/v2/top-headlines?country=de&category=entertainment&apiKey=1ac2aebda1c64e04a5bd4828db18f788"; */
+        `https://newsserver123.herokuapp.com/news/entertainment`
       title = "Unterhaltung";
       icon = logoEnter;
       break;
 
     case "sports":
       newsApi =
-        "https://newsapi.org/v2/top-headlines?country=de&category=sports&apiKey=1ac2aebda1c64e04a5bd4828db18f788";
+       /*  "https://newsapi.org/v2/top-headlines?country=de&category=sports&apiKey=1ac2aebda1c64e04a5bd4828db18f788"; */
+       `https://newsserver123.herokuapp.com/news/sports`
       title = "Sport";
       icon = logoSport;
       break;
 
     case "health":
       newsApi =
-        "https://newsapi.org/v2/top-headlines?country=de&category=health&apiKey=1ac2aebda1c64e04a5bd4828db18f788";
+       /*  "https://newsapi.org/v2/top-headlines?country=de&category=health&apiKey=1ac2aebda1c64e04a5bd4828db18f788"; */
+       `https://newsserver123.herokuapp.com/news/health`
       title = "Gesundheit";
       icon = logoGesund;
       break;

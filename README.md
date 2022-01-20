@@ -57,6 +57,18 @@ Originally I wanted to build an application that allowed users to pull data from
 
 The technologies implemented in this project are React, JSX, and CSS. I chose to use the `create-react-app` boilerplate to minimize initial setup and invest more time in diving into weird technological rabbit holes. 
 
+<!-- 
+// npm install react-icons
+// npm install react-router-dom
+// npm i react-loader-spinner
+// npm i styled-components
+
+// sudo snap install --classic heroku
+// heroku --version
+// https://devcenter.heroku.com/articles/heroku-cli
+// https://elements.heroku.com/buildpacks/mars/create-react-app-buildpack -->
+
+
 
 
 
