@@ -15,6 +15,12 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 // npm i react-loader-spinner
 // npm i styled-components
 
+
+// sudo snap install --classic heroku 
+// heroku --version 
+// https://devcenter.heroku.com/articles/heroku-cli 
+// https://elements.heroku.com/buildpacks/mars/create-react-app-buildpack 
+
 function App() {
   const [searchText, setSearchText] = useState();
   
