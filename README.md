@@ -4,16 +4,27 @@
 
 A news application that works with the JSON API from newsapi.org, built with React, JavaScript, and CSS.
 
+ <br />
+
+
 ## Project Status
 
 
 This project is currently in development. 
 
+ <br />
+
 ## Project Screen Shots 
 
+ <br />
+
 ![Screenshot](Screenshot1.png)
+
+ <br />
+
 ![Screenshot](Screenshot2.png)
 
+ <br />
 
 ## Installation and Setup Instructions
 
@@ -32,6 +43,8 @@ To Start Server:
 To Visit App:
 
 `localhost:3000/`  
+
+ <br />
 
 ## Reflection
 
