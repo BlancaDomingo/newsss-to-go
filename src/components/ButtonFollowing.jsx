@@ -40,18 +40,7 @@ function ButtonFollowing({ newsItem, showFollowing }) {
       localStorage.setItem("followingArr", followingStr);
     }
 
-    /*  else {
-      if (!localStorage.followingArr) {
-        followingArr = [];
-      } else {
-        followingArr = JSON.parse(localStorage.getItem("followingArr"));
-        const newFollowingArr = followingArr.filter((item) => {
-          return item.title !== newsItem.title;
-        });
-        followingStr = JSON.stringify(newFollowingArr);
-        localStorage.setItem("followingArr", followingStr);
-      }
-    } */
+    
   }, [following]);
 
 /*   const setIconFollowing = () => {

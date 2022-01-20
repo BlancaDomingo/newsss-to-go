@@ -25,24 +25,24 @@ function MainNews({ apiParam, searchText, getSearchText }) {
   
 
   let newsApi =
-    /* "https://newsapi.org/v2/top-headlines?country=de&apiKey=9d557de654564232a8830ba0338536e2"; */
-    `https://newsserver123.herokuapp.com/news/de`;
+    "https://newsapi.org/v2/top-headlines?country=de&apiKey=9d557de654564232a8830ba0338536e2"; 
+   /*  `https://newsserver123.herokuapp.com/news/de`; */
   let title = "Deutschland";
   let icon = logoGerman;
 
   switch (apiParam) {
     case "de":
       newsApi =
-       /*  "https://newsapi.org/v2/top-headlines?country=de&apiKey=9d557de654564232a8830ba0338536e2"; */
-       `https://newsserver123.herokuapp.com/news/de`;
+         "https://newsapi.org/v2/top-headlines?country=de&apiKey=9d557de654564232a8830ba0338536e2"; 
+     /*   `https://newsserver123.herokuapp.com/news/de`; */
       title = "Deutschland";
       icon = logoGerman;
       break;
 
     case "general":
       newsApi =
-       /*  "https://newsapi.org/v2/top-headlines?category=general&apiKey=9d557de654564232a8830ba0338536e2";  */
-         `https://newsserver123.herokuapp.com/news/general`; 
+         "https://newsapi.org/v2/top-headlines?category=general&apiKey=9d557de654564232a8830ba0338536e2";  
+        /*  `https://newsserver123.herokuapp.com/news/general`;  */
       title = "Welt";
       icon = logoWorld;
       break;
@@ -52,56 +52,56 @@ function MainNews({ apiParam, searchText, getSearchText }) {
       if (searchText !== "") {
         searchTextNotEmpty = searchText;
       }
-      newsApi =  /* `https://newsapi.org/v2/everything?q=${searchTextNotEmpty}&language=de&apiKey=9d557de654564232a8830ba0338536e2`;  */
-      `https://newsserver123.herokuapp.com/news/search/${searchTextNotEmpty}`; 
+      newsApi =   `https://newsapi.org/v2/everything?q=${searchTextNotEmpty}&language=de&apiKey=9d557de654564232a8830ba0338536e2`;  
+      /* `https://newsserver123.herokuapp.com/news/search/${searchTextNotEmpty}`;  */
       title = searchText;
       icon = logoSearch;
       break;
 
     case "business":
       newsApi =
-       /*  "https://newsapi.org/v2/top-headlines?country=de&category=business&apiKey=9d557de654564232a8830ba0338536e2";  */
-       `https://newsserver123.herokuapp.com/news/business`; 
+       "https://newsapi.org/v2/top-headlines?country=de&category=business&apiKey=9d557de654564232a8830ba0338536e2";  
+     /*   `https://newsserver123.herokuapp.com/news/business`;  */
       title = "Wirtschaft";
       icon = logoBusiness;
       break;
 
     case "science":
       newsApi =
-       /*  "https://newsapi.org/v2/top-headlines?country=de&category=science&apiKey=9d557de654564232a8830ba0338536e2";  */
-        `https://newsserver123.herokuapp.com/news/science` 
+         "https://newsapi.org/v2/top-headlines?country=de&category=science&apiKey=9d557de654564232a8830ba0338536e2";  
+       /*  `https://newsserver123.herokuapp.com/news/science`  */
       title = "Wissenschaft";
       icon = logoScience;
       break;
 
     case "technology":
       newsApi =
-         /* "https://newsapi.org/v2/top-headlines?country=de&category=technology&apiKey=9d557de654564232a8830ba0338536e2";  */
-       `https://newsserver123.herokuapp.com/news/technology`; 
+          "https://newsapi.org/v2/top-headlines?country=de&category=technology&apiKey=9d557de654564232a8830ba0338536e2"; 
+      /*  `https://newsserver123.herokuapp.com/news/technology`;  */
       title = "Technik";
       icon = logoTech;
       break;
 
     case "entertainment":
       newsApi =
-        /* "https://newsapi.org/v2/top-headlines?country=de&category=entertainment&apiKey=9d557de654564232a8830ba0338536e2";  */
-        `https://newsserver123.herokuapp.com/news/entertainment`; 
+         "https://newsapi.org/v2/top-headlines?country=de&category=entertainment&apiKey=9d557de654564232a8830ba0338536e2";  
+       /*  `https://newsserver123.herokuapp.com/news/entertainment`;  */
       title = "Unterhaltung";
       icon = logoEnter;
       break;
 
     case "sports":
       newsApi =
-       /*  "https://newsapi.org/v2/top-headlines?country=de&category=sports&apiKey=9d557de654564232a8830ba0338536e2";  */
-       `https://newsserver123.herokuapp.com/news/sports`; 
+        "https://newsapi.org/v2/top-headlines?country=de&category=sports&apiKey=9d557de654564232a8830ba0338536e2";  
+      /*  `https://newsserver123.herokuapp.com/news/sports`;  */
       title = "Sport";
       icon = logoSport;
       break;
 
     case "health":
       newsApi =
-       /*  "https://newsapi.org/v2/top-headlines?country=de&category=health&apiKey=9d557de654564232a8830ba0338536e2";  */
-      `https://newsserver123.herokuapp.com/news/health`;
+         "https://newsapi.org/v2/top-headlines?country=de&category=health&apiKey=9d557de654564232a8830ba0338536e2";  
+      /* `https://newsserver123.herokuapp.com/news/health`; */
       title = "Gesundheit";
       icon = logoGesund;
       break;
@@ -114,8 +114,8 @@ function MainNews({ apiParam, searchText, getSearchText }) {
     fetch(newsApi)
       .then((res) => res.json())
       .then((res) => {
-       /*  setNews(res.articles); */
-        setNews(res);
+          setNews(res.articles);  
+        /*  setNews(res);  */
         setDone(true);
       })
       .catch(() => {
