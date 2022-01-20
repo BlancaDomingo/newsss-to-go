@@ -27,8 +27,8 @@ function LocalNews({ getSearchText }) {
 
   useEffect(() => {
     fetch(
-      /* `https://newsapi.org/v2/everything?q=${city}&language=de&apiKey=9d557de654564232a8830ba0338536e2` */
-      `https://newsserver123.herokuapp.com/news/search/${city}`
+      `https://newsapi.org/v2/everything?q=${city}&language=de&apiKey=9d557de654564232a8830ba0338536e2` 
+     /*  `https://newsserver123.herokuapp.com/news/search/${city}` */
     )
       .then((res) => res.json())
       .then((res) => {

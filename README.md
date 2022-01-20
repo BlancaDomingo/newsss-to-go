@@ -1,6 +1,6 @@
 ## Newsss toGo
 
-[https://newsss-togo.herokuapp.com/](https://newsss-togo.herokuapp.com/) 
+[https://newsss-to-go.herokuapp.com/](https://newsss-to-go.herokuapp.com/) 
 
 A news application that works with the JSON API from newsapi.org, built with React, JavaScript, and CSS.
 
